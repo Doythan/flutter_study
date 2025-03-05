@@ -1,5 +1,3 @@
-Flutter에서는 **모든 UI가 위젯(Widget)**으로 구성돼 있어.
-
 ---
 
 ## 📌 **기본적으로 알아야 할 두 가지 위젯 유형**
@@ -65,3 +63,130 @@ Flutter에서는 **모든 UI가 위젯(Widget)**으로 구성돼 있어.
 - 현재 위젯이 속한 **트리 정보**를 담고 있음
 - `context`를 통해 **Navigator(화면 전환), Theme(테마 정보)** 등 현재 위젯이 속한 환경에 접근할 수 있음
 - 📌 즉, **`context`는 `BuildContext` 타입의 변수이며, 위젯 트리에서 현재 위젯의 위치를 나타냄!**
+
+---
+# 🚀 Flutter 주요 UI 위젯 정리  
+
+Flutter에서 자주 사용되는 UI 위젯을 정리했습니다.  
+
+---
+
+## 📌 1️⃣ 레이아웃 관련 위젯  
+
+### ✅ **1. `Container` (기본 박스 위젯)**  
+배경색, 크기, 여백, 패딩, 테두리 등을 설정할 수 있는 기본적인 위젯  
+
+```dart
+Container(
+  width: 200,
+  height: 100,
+  padding: EdgeInsets.all(20),
+  margin: EdgeInsets.all(10),
+  decoration: BoxDecoration(
+    color: Colors.blue,
+    borderRadius: BorderRadius.circular(10),
+  ),
+  child: Text('Hello Container', style: TextStyle(color: Colors.white)),
+)
+```
+
+### ✅ **2. `Row` (가로 정렬)**  
+위젯을 가로 방향으로 배치  
+
+```dart
+Row(
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  children: [
+    Icon(Icons.star, size: 50, color: Colors.yellow),
+    Icon(Icons.favorite, size: 50, color: Colors.red),
+    Icon(Icons.thumb_up, size: 50, color: Colors.blue),
+  ],
+)
+```
+
+### ✅ **3. `Column` (세로 정렬)**  
+위젯을 세로 방향으로 배치  
+
+```dart
+Column(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+    Text('첫 번째 줄'),
+    Text('두 번째 줄'),
+    ElevatedButton(onPressed: () {}, child: Text('버튼')),
+  ],
+)
+```
+
+### ✅ **4. `Stack` (위젯을 겹쳐 배치)**  
+위젯을 서로 겹쳐서 배치 (Z축 방향 레이아웃)  
+
+```dart
+Stack(
+  alignment: Alignment.center,
+  children: [
+    Container(width: 200, height: 200, color: Colors.blue),
+    Container(width: 100, height: 100, color: Colors.red),
+    Text('중앙', style: TextStyle(fontSize: 24, color: Colors.white)),
+  ],
+)
+```
+
+---
+
+## 📌 2️⃣ 리스트 & 스크롤 관련 위젯  
+
+### ✅ **5. `ListView` (스크롤 가능한 리스트)**  
+스크롤 가능한 리스트 형태로 여러 개의 아이템을 표시  
+
+```dart
+ListView.builder(
+  itemCount: 10,
+  itemBuilder: (context, index) {
+    return ListTile(title: Text('아이템 ${index + 1}'));
+  },
+)
+```
+
+### ✅ **6. `GridView` (그리드 형태 리스트)**  
+격자 형태로 아이템을 배치  
+
+```dart
+GridView.count(
+  crossAxisCount: 2,
+  children: [
+    Container(color: Colors.blue, height: 100),
+    Container(color: Colors.red, height: 100),
+    Container(color: Colors.green, height: 100),
+    Container(color: Colors.orange, height: 100),
+  ],
+)
+```
+
+### ✅ **7. `SingleChildScrollView` (스크롤 가능하게 만들기)**  
+Column 또는 Row를 감싸서 스크롤 가능하게 만듦  
+
+```dart
+SingleChildScrollView(
+  child: Column(
+    children: List.generate(20, (index) => Text('아이템 ${index + 1}')),
+  ),
+)
+```
+
+---
+
+## 🚀 정리  
+
+| 위젯 | 역할 |
+|------|------|
+| **Container** | 크기, 배경색, 패딩 등을 설정할 수 있는 기본 박스 |
+| **Row** | 가로 정렬 (수평 배치) |
+| **Column** | 세로 정렬 (수직 배치) |
+| **Stack** | 위젯을 겹쳐서 배치 |
+| **ListView** | 스크롤 가능한 리스트 |
+| **GridView** | 격자(그리드) 형태의 리스트 |
+| **SingleChildScrollView** | Column, Row를 스크롤 가능하게 만듦 |
+
+이제 **Flutter UI 위젯**을 활용하여 원하는 화면을 만들어보세요! 🚀
+
