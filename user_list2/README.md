@@ -3,6 +3,7 @@
 #### 전체적인 흐름
 
 [1] 앱 실행 (`main.dart`)
+ 
  ↓  
 [2] `UserListScreen`이 화면에 표시됨  
  ↓  
