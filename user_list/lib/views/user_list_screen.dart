@@ -1,3 +1,4 @@
+// 사용자 목록 화면
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../viewmodels/user_viewmodel.dart';
@@ -8,7 +9,8 @@ class UserListScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final userState = ref.watch(UserViewModelProvider);
+    final userState =
+        ref.watch(UserViewModelProvider); // ✅ Riverpod을 통해 데이터 감시!
 
     return Scaffold(
       appBar: AppBar(title: Text("사용자 목록")),

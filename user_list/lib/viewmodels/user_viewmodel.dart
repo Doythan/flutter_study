@@ -14,7 +14,7 @@ class UserViewModel extends StateNotifier<AsyncValue<List<User>>> {
   Future<void> fetchUsers() async {
     try {
       final users = await repository.FetchUser();
-      state = AsyncData(users);
+      state = AsyncData(users); // ✅ 데이터를 받아서 상태 업데이트!
     } catch (e) {
       state = AsyncError(e, StackTrace.current);
     }

@@ -1,0 +1,57 @@
+# Dart 파일을 GitHub 언어 분석에서 우선적으로 감지
+*.dart linguist-detectable=true
+
+# 각 프로젝트의 네이티브 코드 폴더를 GitHub 언어 분석에서 제외
+first_app/android/** linguist-vendored
+first_app/ios/** linguist-vendored
+first_app/macos/** linguist-vendored
+first_app/windows/** linguist-vendored
+first_app/linux/** linguist-vendored
+
+flutter_state_manaage_riverpod/android/** linguist-vendored
+flutter_state_manaage_riverpod/ios/** linguist-vendored
+flutter_state_manaage_riverpod/macos/** linguist-vendored
+flutter_state_manaage_riverpod/windows/** linguist-vendored
+flutter_state_manaage_riverpod/linux/** linguist-vendored
+
+flutter_state_manaagement/android/** linguist-vendored
+flutter_state_manaagement/ios/** linguist-vendored
+flutter_state_manaagement/macos/** linguist-vendored
+flutter_state_manaagement/windows/** linguist-vendored
+flutter_state_manaagement/linux/** linguist-vendored
+
+my_mvvm_project/android/** linguist-vendored
+my_mvvm_project/ios/** linguist-vendored
+my_mvvm_project/macos/** linguist-vendored
+my_mvvm_project/windows/** linguist-vendored
+my_mvvm_project/linux/** linguist-vendored
+
+orai_review/android/** linguist-vendored
+orai_review/ios/** linguist-vendored
+orai_review/macos/** linguist-vendored
+orai_review/windows/** linguist-vendored
+orai_review/linux/** linguist-vendored
+
+practice_app/android/** linguist-vendored
+practice_app/ios/** linguist-vendored
+practice_app/macos/** linguist-vendored
+practice_app/windows/** linguist-vendored
+practice_app/linux/** linguist-vendored
+
+second_app/android/** linguist-vendored
+second_app/ios/** linguist-vendored
+second_app/macos/** linguist-vendored
+second_app/windows/** linguist-vendored
+second_app/linux/** linguist-vendored
+
+user_list/android/** linguist-vendored
+user_list/ios/** linguist-vendored
+user_list/macos/** linguist-vendored
+user_list/windows/** linguist-vendored
+user_list/linux/** linguist-vendored
+
+user_list2/android/** linguist-vendored
+user_list2/ios/** linguist-vendored
+user_list2/macos/** linguist-vendored
+user_list2/windows/** linguist-vendored
+user_list2/linux/** linguist-vendored
